@@ -1,4 +1,4 @@
-//test1
+
 .data
 BYTE_VAL db 10
 WORD_VAL dw 20b
