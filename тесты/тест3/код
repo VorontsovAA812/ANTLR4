@@ -1,0 +1,11 @@
+.data
+VAR1 db ?
+VAR2 dw 123h
+VAR3 dd 4567B
+
+.code
+START:
+    mov AX, 3Q
+    add AX, 2
+    sub AX, VAR3
+end
