@@ -1,0 +1,12 @@
+.data
+MYBYTE db 1h
+MYWORD dw 2O
+MYDWORD dd 2B
+
+.code
+LABEL1:
+    mov BX, MYBYTE
+    add CX, MYWORD
+    sub DX, MYDWORD
+	add CX, 2.3
+end
