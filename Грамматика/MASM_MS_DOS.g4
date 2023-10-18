@@ -26,7 +26,7 @@ jmp: (JMP ID);
 operand1: (id|register); 
 operand2: (id|register);
 
-//вводим определение ригистров
+//вводим определение регистров
 memory_reference: '[' register? ']';
 register: general_registers | segment_registers | index_registers;
 general_registers: sixteen_bit_register | eight_bit_high_register | eight_bit_low_register;
