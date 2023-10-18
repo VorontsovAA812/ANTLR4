@@ -1,1 +1,44 @@
-.
+//test1
+.data
+BYTE_VAL db 10
+WORD_VAL dw 20b
+
+.code
+ENTRY_POINT:
+    mov AL, BYTE_VAL
+	jmp END_PROGRAM
+    xclhg AL, AH
+END_PROGRAM:
+end
+
+
+
+//test2
+.data
+MYBYTE db 1h
+MYWORD dw 2O
+MYDWORD dd 2B
+
+.code
+LABEL1:
+    mov BX, MYBYTE
+    add CX, MYWORD
+    sub DX, MYDWORD
+	add CX, 2.3
+end
+
+
+
+//test3
+.data
+VAR1 db ?
+VAR2 dw 123h
+VAR3 dd 4567B
+
+.code
+START:
+    mov AX, 3Q
+    add AX, 2
+    sub AX, VAR3
+end
+
