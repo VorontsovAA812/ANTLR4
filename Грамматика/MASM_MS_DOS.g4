@@ -3,6 +3,10 @@ programm: simplified_segment_directives;
 simplified_segment_directives:
 		data_segment code_segment end;  // упрощённые директивы определения сегмента
 
+
+
+
+
 data_segment: DATA (data_directive)*;
 data_directive: (name type_and_value );
 name: id;
@@ -13,10 +17,11 @@ value
     ;
 
 
+
+
 code_segment: CODE (instruction)*;
 instruction: (metka? comand);
 //команды
-
 comand: add|sub | mov|xclhg|jmp;
 mov: (MOV operand1 ',' operand2);
 xclhg:(XCLHG operand1 ',' operand2);
@@ -25,16 +30,22 @@ sub: (SUB operand1 ',' operand2);
 jmp: (JMP ID);
 operand1: (id|register); 
 operand2: (id|register);
-
 //вводим определение регистров
 memory_reference: '[' register? ']';
 register: general_registers | segment_registers | index_registers;
 general_registers: sixteen_bit_register | eight_bit_high_register | eight_bit_low_register;
 
+
+
 end: metka? END;
 
-metka: ID ':';
+
+
+
+
 //id и лексические правила
+metka: ID ':';
+
 id	
 	: ID
 	| NUMBER
@@ -57,6 +68,7 @@ eight_bit_high_register: 'AH' | 'BH' | 'CH' | 'DH';
 eight_bit_low_register: 'AL' | 'BL' | 'CL' | 'DL';
 segment_registers: 'CS' | 'DS' | 'ES' | 'SS';
 index_registers: 'SI' | 'DI';
+
 
 DB: ('db' | 'byte') ;
 DW: ('dw' | 'word') ;
