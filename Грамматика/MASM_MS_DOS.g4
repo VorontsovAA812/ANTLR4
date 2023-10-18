@@ -19,6 +19,7 @@ value
 
 
 
+
 code_segment: CODE (instruction)*;
 instruction: (metka? comand);
 //команды
@@ -38,6 +39,7 @@ general_registers: sixteen_bit_register | eight_bit_high_register | eight_bit_lo
 
 
 
+
 end: metka? END;
 
 
@@ -46,30 +48,26 @@ end: metka? END;
 
 //id и лексические правила
 metka: ID ':';
-
 id	
 	: ID
 	| NUMBER
 	;
 NUMBER: 
-	(INT |REAL);
-	
+	(INT |REAL);	
 INT:
-		(DIGIT)+ ('d' | 'D')?
+	(DIGIT)+ ('d' | 'D')?
         |(DIGIT)+ ('h' | 'H')
         |(DIGIT)+ ('o' | 'O' | 'Q'|'q')
         | (DIGIT)+ ('b' | 'B')	
 		;
 REAL:
 	 ('+' | '-')? (DIGIT)+ '.' (DIGIT)+ ('E' ('+' | '-')? (DIGIT)+)? ;// [[+|-]]цифры.цифры[[E[[+|-]]цифры]]
- 
 
 sixteen_bit_register: 'AX' | 'BX' | 'CX' | 'DX' | 'SI' | 'DI' | 'BP' | 'SP';
 eight_bit_high_register: 'AH' | 'BH' | 'CH' | 'DH';
 eight_bit_low_register: 'AL' | 'BL' | 'CL' | 'DL';
 segment_registers: 'CS' | 'DS' | 'ES' | 'SS';
 index_registers: 'SI' | 'DI';
-
 
 DB: ('db' | 'byte') ;
 DW: ('dw' | 'word') ;
@@ -78,6 +76,7 @@ DF: ('df' | 'tbyte') ;
 DP: ('dp' | 'pword') ; 
 DQ: ('dq' | 'qword') ;
 DT: ('dt' | 'tword') ; 
+
 MOV: 'mov';
 XCLHG: 'xclhg';
 ADD: 'add' ;
