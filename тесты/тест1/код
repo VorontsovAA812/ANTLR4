@@ -1,0 +1,12 @@
+//test1
+.data
+BYTE_VAL db 10
+WORD_VAL dw 20b
+
+.code
+ENTRY_POINT:
+    mov AL, BYTE_VAL
+	jmp END_PROGRAM
+    xclhg AL, AH
+END_PROGRAM:
+end
